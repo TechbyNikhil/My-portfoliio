@@ -52,13 +52,12 @@ const Navbar = () => {
             {/* Resume Button */}
             <div className="hidden lg:block">
               <a
-                href="/Nikhil_Pathak_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-[#FFB000] transition duration-300"
-              >
-                Resume ↗
-              </a>
+  href="/Nikhil_Pathak_Resume.pdf"
+  download="Nikhil_Pathak_Resume.pdf"
+  className="bg-[#FFB000] text-[#111111] px-7 py-3.5 rounded-full font-semibold hover:bg-white transition duration-300"
+>
+  Resume ↓
+</a>
             </div>
 
             {/* Mobile Button */}
