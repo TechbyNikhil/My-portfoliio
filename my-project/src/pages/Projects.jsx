@@ -2,24 +2,26 @@ const Projects = () => {
   const projects = [
     {
       number: "01",
-      title: "Zomato Clone",
-      category: "Web Development",
+      title: "SpendWise",
+      category: "Full Stack App",
       description:
-        "A food delivery website inspired by Zomato, built to practice responsive layouts, navigation, cards and modern frontend design.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      github: "#",
-      live: "#",
+        "A modern financial dashboard and expense tracker built with React, Vite and Tailwind CSS. Features real-time balance tracking, income vs. expense charts, budget management with visual guardrails and CSV export.",
+      technologies: ["React", "Vite", "Tailwind CSS", "Recharts"],
+      github: "https://github.com/TechbyNikhil/smart-expanse-tracker",
+      live: "https://smart-expanse-tracker-orcin.vercel.app",
+      image: "/projects/spendwise.png",
     },
 
     {
       number: "02",
-      title: "Flipkart Clone",
-      category: "Web Development",
+      title: "ShopSphere",
+      category: "E-Commerce",
       description:
-        "A responsive e-commerce interface inspired by Flipkart with product sections, navigation and a clean shopping-oriented layout.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      github: "#",
+        "A full-stack e-commerce platform with product listings, cart management, authentication and a backend API. Designed with a clean shopping-oriented layout and smooth user experience.",
+      technologies: ["React", "Node.js", "JavaScript", "CSS"],
+      github: "https://github.com/TechbyNikhil/E-Commerce-ShopSphere",
       live: "#",
+      image: "/projects/shopsphere.png",
     },
 
     {
@@ -27,43 +29,47 @@ const Projects = () => {
       title: "Calculator",
       category: "JavaScript",
       description:
-        "A simple and responsive calculator built using HTML, CSS and JavaScript with basic arithmetic operations.",
+        "A clean and responsive calculator built with HTML, CSS and JavaScript, deployed on Vercel. Supports all basic arithmetic operations with a smooth, modern UI.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      github: "#",
-      live: "#",
+      github: "https://github.com/TechbyNikhil/calculator",
+      live: "https://calculator-nikhil-team6.vercel.app",
+      image: "/projects/calculator.png",
     },
 
     {
       number: "04",
-      title: "Image Gallery",
-      category: "Frontend",
+      title: "My Portfolio",
+      category: "Web Development",
       description:
-        "A clean image gallery interface designed to display images in an organized and responsive layout.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      github: "#",
-      live: "#",
+        "My personal developer portfolio built with React, Vite and Tailwind CSS. Showcases my skills, projects and experience with a minimal, modern design.",
+      technologies: ["React", "Vite", "Tailwind CSS"],
+      github: "https://github.com/TechbyNikhil/My-portfoliio",
+      live: "https://www.nikhilpathak.me/",
+      image: "/projects/portfolio.png",
     },
 
     {
       number: "05",
-      title: "Snake Water Gun",
-      category: "JavaScript Game",
+      title: "LeetCode Solutions",
+      category: "DSA / Problem Solving",
       description:
-        "A browser-based Snake Water Gun game created to practice JavaScript logic, conditions and user interaction.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      github: "#",
+        "A curated collection of my LeetCode problem solutions written in Java, covering Arrays, Strings, Hashmaps, Sliding Window, Two Pointers and more — tracked with LeetHub.",
+      technologies: ["Java", "DSA", "LeetCode"],
+      github: "https://github.com/TechbyNikhil/My-leetcode-solutions",
       live: "#",
+      image: "/projects/leetcode.png",
     },
 
     {
       number: "06",
-      title: "30 Days of JavaScript",
+      title: "JavaScript Assignments",
       category: "Learning",
       description:
-        "A collection of JavaScript exercises and projects created while practicing JavaScript concepts through a 30-day learning challenge.",
+        "A repository of JavaScript practice exercises and assignments completed during my learning journey — covering core concepts, DOM manipulation, events and more.",
       technologies: ["JavaScript", "HTML", "CSS"],
-      github: "#",
+      github: "https://github.com/TechbyNikhil/JavaScript-assignment",
       live: "#",
+      image: "/projects/js-assignments.png",
     },
   ];
 
@@ -106,65 +112,47 @@ const Projects = () => {
             <div
               key={project.number}
               className={`group rounded-[2rem] overflow-hidden transition duration-300 hover:-translate-y-1 ${
-                index === 1
+                index % 3 === 1
                   ? "bg-[#FFB000]"
-                  : index === 4
+                  : index % 3 === 2
                   ? "bg-[#111111] text-white"
                   : "bg-white border border-black/10"
               }`}
             >
 
               {/* Project Visual */}
-              <div
-                className={`h-56 relative overflow-hidden ${
-                  index === 1
-                    ? "bg-[#111111]"
-                    : index === 4
-                    ? "bg-[#FFB000]"
-                    : "bg-[#111111]"
-                }`}
-              >
+              <div className="h-56 relative overflow-hidden bg-[#111111]">
 
-                {/* Decorative Elements */}
-                <div className="absolute w-40 h-40 rounded-full border-[25px] border-[#FFB000]/20 -top-16 -right-10"></div>
+                {/* Project Screenshot */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "flex";
+                  }}
+                />
 
-                <div className="absolute w-20 h-20 rounded-full bg-[#FFB000] -bottom-10 -left-8"></div>
-
-                {/* Browser Window */}
-                <div className="absolute left-8 right-8 top-8 bottom-0 bg-[#F7F5EF] rounded-t-2xl p-4 transition duration-500 group-hover:scale-[1.03]">
-
-                  {/* Browser Header */}
-                  <div className="flex items-center gap-1.5 mb-5">
-                    <span className="w-2.5 h-2.5 bg-red-400 rounded-full"></span>
-                    <span className="w-2.5 h-2.5 bg-yellow-400 rounded-full"></span>
-                    <span className="w-2.5 h-2.5 bg-green-400 rounded-full"></span>
-                  </div>
-
-                  {/* Project Mockup */}
-                  <div className="space-y-3">
-
-                    <div className="w-1/3 h-3 bg-[#111111] rounded-full"></div>
-
+                {/* Fallback if image fails */}
+                <div className="absolute inset-0 hidden items-center justify-center bg-[#111111]">
+                  <div className="space-y-3 px-8 w-full">
+                    <div className="w-1/3 h-3 bg-[#FFB000]/40 rounded-full"></div>
                     <div className="grid grid-cols-3 gap-2">
-
-                      <div className="h-20 bg-[#FFB000] rounded-lg"></div>
-
-                      <div className="h-20 bg-gray-200 rounded-lg"></div>
-
-                      <div className="h-20 bg-gray-300 rounded-lg"></div>
-
+                      <div className="h-16 bg-[#FFB000]/30 rounded-lg"></div>
+                      <div className="h-16 bg-white/10 rounded-lg"></div>
+                      <div className="h-16 bg-white/5 rounded-lg"></div>
                     </div>
-
-                    <div className="w-2/3 h-3 bg-gray-300 rounded-full"></div>
-
-                    <div className="w-1/2 h-3 bg-gray-200 rounded-full"></div>
-
+                    <div className="w-2/3 h-3 bg-white/10 rounded-full"></div>
+                    <div className="w-1/2 h-3 bg-white/5 rounded-full"></div>
                   </div>
-
                 </div>
 
+                {/* Gradient overlay at bottom for readability */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent"></div>
+
                 {/* Project Number */}
-                <span className="absolute top-5 right-6 text-white/60 text-sm font-semibold">
+                <span className="absolute top-4 right-5 bg-black/40 backdrop-blur-sm text-white/80 text-xs font-bold px-2.5 py-1 rounded-full">
                   {project.number}
                 </span>
 
@@ -176,9 +164,9 @@ const Projects = () => {
                 {/* Category */}
                 <p
                   className={`text-sm font-semibold uppercase tracking-wider ${
-                    index === 4
+                    index % 3 === 2
                       ? "text-[#FFB000]"
-                      : index === 1
+                      : index % 3 === 1
                       ? "text-black/60"
                       : "text-[#FFB000]"
                   }`}
@@ -194,9 +182,9 @@ const Projects = () => {
                 {/* Description */}
                 <p
                   className={`mt-4 leading-7 ${
-                    index === 4
+                    index % 3 === 2
                       ? "text-gray-400"
-                      : index === 1
+                      : index % 3 === 1
                       ? "text-black/60"
                       : "text-gray-500"
                   }`}
@@ -211,9 +199,9 @@ const Projects = () => {
                     <span
                       key={technology}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium ${
-                        index === 4
+                        index % 3 === 2
                           ? "bg-white/10 text-gray-300"
-                          : index === 1
+                          : index % 3 === 1
                           ? "bg-white text-black"
                           : "bg-[#F7F5EF] text-[#111111]"
                       }`}
@@ -232,7 +220,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-5 py-2.5 rounded-full text-sm font-semibold transition duration-300 ${
-                      index === 4
+                      index % 3 === 2
                         ? "bg-[#FFB000] text-[#111111] hover:bg-white"
                         : "bg-[#111111] text-white hover:bg-[#FFB000] hover:text-black"
                     }`}
@@ -240,18 +228,20 @@ const Projects = () => {
                     GitHub ↗
                   </a>
 
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition duration-300 ${
-                      index === 4
-                        ? "border-white/20 text-gray-300 hover:border-[#FFB000] hover:text-[#FFB000]"
-                        : "border-black/15 text-[#111111] hover:border-[#FFB000] hover:text-[#FFB000]"
-                    }`}
-                  >
-                    Live Demo ↗
-                  </a>
+                  {project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition duration-300 ${
+                        index % 3 === 2
+                          ? "border-white/20 text-gray-300 hover:border-[#FFB000] hover:text-[#FFB000]"
+                          : "border-black/15 text-[#111111] hover:border-[#FFB000] hover:text-[#FFB000]"
+                      }`}
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
 
                 </div>
 
