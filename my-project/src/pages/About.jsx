@@ -1,223 +1,145 @@
+import aboutPhoto from "../assets/nikhil-about.jpg";
+import { FaGraduationCap, FaTrophy, FaCode, FaShieldHalved, FaArrowRight } from "react-icons/fa6";
+
 const About = () => {
+  const stats = [
+    { label: "LeetCode Solved", value: "60+", sub: "DSA & Problem Solving" },
+    { label: "Projects Completed", value: "10+", sub: "Web, Games & Apps" },
+    { label: "IoT Wars Competition", value: "1st", sub: "University Champion" },
+    { label: "Inverthon 2.0", value: "Top 10", sub: "Finalist (Team Guard)" },
+  ];
+
+  const highlights = [
+    {
+      icon: <FaGraduationCap className="text-[#ff5722]" size={22} />,
+      title: "B.Tech Computer Science Engineering",
+      subtitle: "Invertis University, Bareilly",
+      desc: "2025 - 2029 • 1st Year: 74% • Focused on software engineering principles, algorithms, and systems.",
+    },
+    {
+      icon: <FaCode className="text-[#ff7a00]" size={20} />,
+      title: "Hands-on Full-Stack Development",
+      subtitle: "React.js, Modern JavaScript & Java",
+      desc: "Building intuitive user interfaces with clean architecture, responsive components, and scalable code.",
+    },
+    {
+      icon: <FaTrophy className="text-[#ffc107]" size={20} />,
+      title: "Competitive Hackathon Builder",
+      subtitle: "Winner of IoT Wars & Inverthon 2.0 Finalist",
+      desc: "Collaborated in high-pressure hackathons to architect IoT hardware-software solutions that won awards.",
+    },
+    {
+      icon: <FaShieldHalved className="text-[#4caf50]" size={20} />,
+      title: "Cybersecurity & Cloud Aspirations",
+      subtitle: "AWS Builder Center Explorer",
+      desc: "Exploring cloud architectures, web security vulnerabilities, and network protection practices.",
+    },
+  ];
+
   return (
-    <section
-      id="about"
-      className="bg-[#F7F5EF] text-[#111111] px-6 py-24"
-    >
-      <div className="max-w-7xl mx-auto">
-
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-
-          <div>
-            <div className="inline-flex items-center gap-2 bg-white border border-black/10 px-4 py-2 rounded-full text-sm font-semibold mb-5">
-              <span className="w-2.5 h-2.5 bg-[#FFB000] rounded-full"></span>
-              About Me
+    <section id="about" className="py-20 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto space-y-16">
+        
+        {/* Top Header matching reference photo 1's "Behind the Designs" layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-6 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ff5722]/15 border border-[#ff5722]/30 text-[#ff5722] text-xs font-bold uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-[#ff5722]"></span>
+              Behind the Code
             </div>
-
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
-              A little
-              <span className="text-[#FFB000]"> about </span>
-              me.
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.05]">
+              Shaping Experiences That Make Technology <span className="text-[#ff5722]">Simpler.</span>
             </h2>
           </div>
 
-          <p className="text-gray-500 max-w-md leading-7">
-            A Computer Science student passionate about Software
-            Engineering, Web Development, and problem solving.
-          </p>
-        </div>
-
-        {/* Main About Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-          {/* Left Profile Card */}
-          <div className="lg:col-span-5 bg-[#111111] rounded-[2rem] p-8 md:p-10 text-white min-h-[500px] relative overflow-hidden">
-
-            {/* Decorative Circle */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border-[40px] border-[#FFB000]/20"></div>
-
-            <div className="absolute right-10 top-10 w-5 h-5 bg-[#FFB000] rounded-full"></div>
-
-            <div className="relative z-10 h-full flex flex-col justify-between">
-
-              <div>
-                <p className="text-[#FFB000] text-sm uppercase tracking-[0.2em] font-semibold">
-                  Who I Am
-                </p>
-
-                <h3 className="text-3xl md:text-4xl font-bold mt-4 leading-tight">
-                  Building,
-                  <br />
-                  learning &
-                  <br />
-                  creating.
-                </h3>
-              </div>
-
-              {/* Profile Icon */}
-              <div className="flex justify-center my-8">
-                <div className="w-44 h-44 md:w-52 md:h-52 rounded-full bg-[#FFB000] flex items-center justify-center">
-                  <span className="text-7xl md:text-8xl font-bold text-[#111111]">
-                    N
-                  </span>
-                </div>
-              </div>
-
-              {/* Introduction */}
-              <div>
-                <p className="text-gray-400 leading-7">
-                  👋 I'm Nikhil Pathak, a 2nd year B.Tech Computer
-                  Science Engineering student at Invertis University,
-                  passionate about Software Engineering, Web
-                  Development, and problem solving.
-                </p>
-              </div>
-
+          <div className="lg:col-span-6 space-y-5 lg:pt-8">
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              I'm Nikhil Pathak, a 2nd year B.Tech Computer Science student at Invertis University. I specialize in building responsive frontend applications with React and Tailwind, solving challenging Data Structure problems in Java, and exploring cloud infrastructures like AWS.
+            </p>
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+              Whether architecting a full-stack e-commerce platform like ShopSphere, engineering a real-time financial dashboard like SpendWise, designing an award-winning IoT prototype, or solving algorithms in Java, I approach every challenge with curiosity, persistence, and attention to detail.
+            </p>
+            <div className="pt-2">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2.5 bg-[#ff5722] hover:bg-[#ff6b35] text-white font-semibold text-sm px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-[#ff5722]/30 hover:shadow-xl hover:shadow-[#ff5722]/50 hover:-translate-y-0.5"
+              >
+                Let's Build Something Meaningful <FaArrowRight size={12} />
+              </a>
             </div>
-          </div>
-
-          {/* Right Content */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            {/* Education */}
-            <div className="bg-white rounded-[2rem] p-8 border border-black/10 min-h-[240px]">
-
-              <div className="flex items-center justify-between">
-                <span className="w-12 h-12 bg-[#FFB000] rounded-full flex items-center justify-center text-xl font-bold">
-                  01
-                </span>
-
-                <span className="text-gray-400">
-                  Education
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8">
-                B.Tech Computer Science
-              </h3>
-
-              <p className="text-gray-500 mt-2">
-                Invertis University
-              </p>
-
-              <p className="text-gray-400 text-sm mt-4">
-                2025 - 2029
-              </p>
-            </div>
-
-            {/* Focus Areas */}
-            <div className="bg-[#FFB000] rounded-[2rem] p-8 min-h-[240px]">
-
-              <div className="flex items-center justify-between">
-                <span className="w-12 h-12 bg-[#111111] text-white rounded-full flex items-center justify-center text-xl font-bold">
-                  02
-                </span>
-
-                <span className="text-black/60">
-                  Focus Areas
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8">
-                What I Focus On
-              </h3>
-
-              <ul className="text-black/70 mt-4 space-y-2">
-                <li>• 💻 Web Development</li>
-                <li>• ☕ Data Structures & Algorithms</li>
-                <li>• 🔐 Cybersecurity</li>
-              </ul>
-            </div>
-
-            {/* Achievements */}
-            <div className="md:col-span-2 bg-white rounded-[2rem] p-8 border border-black/10 min-h-[240px]">
-
-              <div className="flex items-center justify-between">
-                <span className="w-12 h-12 bg-[#111111] text-white rounded-full flex items-center justify-center text-xl font-bold">
-                  03
-                </span>
-
-                <span className="text-gray-400">
-                  Achievements
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-
-                {/* IoT Wars */}
-                <div>
-                  <h3 className="text-xl font-bold">
-                    🏆 Winner — IoT Wars
-                  </h3>
-
-                  <p className="text-gray-500 mt-2">
-                    Invertis University
-                  </p>
-                </div>
-
-                {/* Inverthon */}
-                <div>
-                  <h3 className="text-xl font-bold">
-                    🥇 Top 10 Finalist — Inverthon 2.0
-                  </h3>
-
-                  <p className="text-gray-500 mt-2">
-                    Worked on an IoT-based solution with my team.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
           </div>
         </div>
 
-        {/* Skills & Experience Description */}
-        <div className="mt-6 bg-white rounded-[2rem] border border-black/10 p-8 md:p-10">
-
-          <div className="flex flex-col md:flex-row gap-6">
-
-            <div className="w-14 h-14 shrink-0 bg-[#FFB000] rounded-full flex items-center justify-center text-2xl">
-              💻
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((s, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-3xl bg-[#11131a] border border-white/5 hover:border-[#ff5722]/40 transition-all duration-300 group"
+            >
+              <p className="text-3xl md:text-4xl lg:text-5xl font-black text-white group-hover:text-[#ff5722] transition-colors">
+                {s.value}
+              </p>
+              <p className="text-sm font-bold text-gray-200 mt-2">
+                {s.label}
+              </p>
+              <p className="text-xs text-gray-400 mt-1">
+                {s.sub}
+              </p>
             </div>
+          ))}
+        </div>
 
-            <div className="space-y-5">
+        {/* Bento Grid: Photo + Story + Education Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          
+          {/* Left: AWS Builder Center Outdoor Photo Card */}
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden border border-white/10 bg-[#11131a] min-h-[420px] group shadow-2xl">
+            <img
+              src={aboutPhoto}
+              alt="Nikhil Pathak at AWS Builder Center"
+              className="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-              <p className="text-lg md:text-xl text-gray-600 leading-8">
-                I have a strong foundation in{" "}
-                <span className="text-[#111111] font-semibold">
-                  Java, JavaScript, HTML, CSS, and Data Structures &
-                  Algorithms
-                </span>
-                , and I'm currently exploring{" "}
-                <span className="text-[#FFB000] font-semibold">
-                  React and modern web development
-                </span>
-                . I enjoy building practical projects and improving
-                my programming skills through coding challenges and
-                hands-on learning.
+            <div className="absolute bottom-6 left-6 right-6 space-y-2">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#ff5722] text-white text-xs font-bold uppercase tracking-wider">
+                Active Builder
+              </span>
+              <h3 className="text-xl font-bold text-white leading-snug">
+                AWS Builder Center: Future Builders Connect
+              </h3>
+              <p className="text-gray-300 text-xs leading-relaxed">
+                Immersing in real-world cloud architectures, developer tooling, and modern tech culture.
               </p>
-
-              <p className="text-lg md:text-xl text-gray-600 leading-8">
-                I enjoy creating websites, learning new technologies
-                and building projects that solve real-world problems.
-                My goal is to become a skilled{" "}
-                <span className="text-[#111111] font-semibold">
-                  cybersecurity expert
-                </span>{" "}
-                while developing secure and innovative applications.
-              </p>
-
-              <p className="text-lg md:text-xl text-gray-600 leading-8">
-                🚀 I'm always excited to learn new technologies,
-                build meaningful projects, collaborate with others,
-                and grow as a Software Engineer.
-              </p>
-
             </div>
-
           </div>
+
+          {/* Right: Pillars & Background Details */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {highlights.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-3xl bg-[#11131a] border border-white/5 hover:border-white/15 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-11 h-11 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center mb-4">
+                    {item.icon}
+                  </div>
+                  <h4 className="text-base font-bold text-white tracking-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs font-semibold text-[#ff7a00] mt-1">
+                    {item.subtitle}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-2.5 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>
